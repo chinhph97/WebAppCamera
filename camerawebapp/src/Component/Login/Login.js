@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from "axios";
 import LoginForm from '../Login/LoginForm.js';
+import GetImage from '../GetImage/GetImage.js';
 class Login extends Component {
     state ={
         repos:''
@@ -23,12 +24,21 @@ class Login extends Component {
             });
         }else return;
     }
+    addCamera = () => {
+        if (this.state.repos == "Logged in as admin") {
+          return <GetImage></GetImage>
+        }
+        // else {
+        //   return this.renderImage();
+        // }
+      }
     render() {
         return (
             <div>
                 <LoginForm PostInfor={this.PostInfor}></LoginForm>
                 <br></br>
                 <h5>{this.state.repos}</h5>
+                {this.addCamera()}
             </div>
         );
     }
