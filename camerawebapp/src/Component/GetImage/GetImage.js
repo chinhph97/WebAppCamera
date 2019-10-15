@@ -25,12 +25,14 @@ class GetImage extends Component {
   }
   render() {
     console.log(this.state.repos)
+    console.log(typeof this.state.repos)
     return (
       <div className="App">
           <h5 className="App-title">ADD CAMERA</h5>
         <AddCamera getURL={this.getURL} />
         {/* { this.state.repos ? <p>URL: { this.state.repos }</p> : <p>Enter the URL of the camera</p> } */}
-        <img src={this.state.repos} alt="image in camera"></img>
+        
+        <img src={ this.state.repos } alt="image in camera"></img>
       </div>
     );
     
